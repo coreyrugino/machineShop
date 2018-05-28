@@ -1,0 +1,12 @@
+%h1= "Welcome do the Dashboard #{current_user.first_name}"
+-if current_user.superadmin_role
+  %h5 Super Admin!
+-elsif current_user.supervisor_role
+  %h5 Supervisor
+-else
+  %h5 User
+= button_to('Logout', destroy_user_session_path, :method => :delete)
+%br
+= "machines: #{@machines.count}"
+%br
+= "users: #{@users.count}"

@@ -1,0 +1,32 @@
+.center
+  %h1 Machine Shop Database
+- if current_user.nil?
+  = link_to new_user_session_path, class: 'login-button' do
+    Sign in
+- else
+  -# = link_to app_dashboard_index_path, class: 'login-button' do
+  -#   Go to App
+  -# %p= "welcome #{current_user.email}"
+  %p= "welcome #{current_user.first_name} #{current_user.last_name}"
+  %p= user_session
+  =link_to dashboard_index_path, class: 'login-button' do
+    go to app
+  
+  %p= button_to 'Log out', destroy_user_session_path, method: :delete
+
+%br
+= "="* 21
+%br
+%p === Machines Available ===
+= "="* 21
+%h5= "machine count: #{@machines.count}"
+- i=0
+- @machines.each do |machine|
+  - i=i+1
+  = "machine #{i}"
+  %br
+  = "Name: #{machine.name}"
+  %br
+  = "Kind: #{machine.kind}"
+  %br
+  %br
