@@ -11,8 +11,8 @@ class Ability
         can :dashboard            #allows admin users to access dashboard
       end
       if user.supervisor_role?
-        # can :read, :all
-        can :manage, :all
+        can :read, :all
+        # can :manage, :all
       end
     #
     # The first argument to `can` is the action you are giving the user

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     registration: 'users/registration'
   }
   resources :machines
-  # resources :users
+  resources :users
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

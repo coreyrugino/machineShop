@@ -1,31 +1,30 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 # before_filter :configure_sign_up_params, only: [:create]
 # before_filter :configure_account_update_params, only: [:update]
-
-  GET /resource/sign_up
+  binding.pry
+  # GET /resource/sign_up
   def new
     super
   end
 
-  POST /resource
+  # POST /resource
   def create
 
     super
-    binding.pry
     toastr.success('Have fun storming the castle!', 'Miracle Max Says')
   end
 
-  GET /resource/edit
+  # GET /resource/edit
   def edit
     super
   end
 
-  PUT /resource
+  # PUT /resource
   def update
     super
   end
 
-  DELETE /resource
+  # DELETE /resource
   def destroy
     super
   end
