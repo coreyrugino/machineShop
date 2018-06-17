@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
+
+  # get 'dashboard/index' => 'dashboard#index'
+  get 'home/index' => 'home#index'
+  root to: 'home#index'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     passwords: 'users/passwords',

@@ -9,9 +9,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-
-    super
     toastr.success('Have fun storming the castle!', 'Miracle Max Says')
+    super
   end
 
   # GET /resource/edit
